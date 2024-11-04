@@ -45,11 +45,11 @@ local servers = {
             },
             options = {
                 nixos = {
-                    expr = 'import (builtins.getFlake "/home/johye/nix-config").nixosConfigurations.wsl.options',
+                    expr = 'import (builtins.getFlake "/home/johye/nix-config").nixosConfigurations.WSL.options',
                 },
-                home_manager = {
-                    expr = 'import (builtins.getFlake "/home/johye/nix-config").homeConfigurations.johye.options',
-                },
+                -- home_manager = {
+                --     expr = 'import (builtins.getFlake "/home/johye/nix-config").homeConfigurations.johye.options',
+                -- },
             },
         },
     },
