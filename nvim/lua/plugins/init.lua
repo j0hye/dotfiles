@@ -6,20 +6,20 @@ local function mini_setup()
 end
 
 local plugins = {
-    -- { -- Colorscheme
-    --     "rose-pine/neovim",
-    --     name = "rose-pine",
-    --     lazy = false,
-    --     priority = 1000,
-    --     init = function()
-    --         require("rose-pine").setup {
-    --             styles = {
-    --                 transparency = false,
-    --             },
-    --         }
-    --         vim.cmd.colorscheme "rose-pine"
-    --     end,
-    -- },
+    { -- Colorscheme
+        "rose-pine/neovim",
+        name = "rose-pine",
+        lazy = false,
+        priority = 1000,
+        init = function()
+            require("rose-pine").setup {
+                styles = {
+                    transparency = true,
+                },
+            }
+            vim.cmd.colorscheme "rose-pine"
+        end,
+    },
     { -- Mini plugins
         "echasnovski/mini.nvim",
         event = "VimEnter",
@@ -88,18 +88,18 @@ local plugins = {
         keys = require("keymap").trouble,
         opts = {},
     },
-    -- { -- Completion
-    --     "Saghen/blink.cmp",
-    --     dependencies = {
-    --         -- { "Saghen/blink.compat", opts = { impersonate_nvim_cmp = true } },
-    --         "rafamadriz/friendly-snippets",
-    --     },
-    --     -- lazy = false,
-    --     -- version = "v0.*.*",
-    --     event = "VeryLazy",
-    --     build = "nix run .#build-plugin",
-    --     opts = require("plugins.cmp").blink,
-    -- },
+    { -- Completion
+        "Saghen/blink.cmp",
+        dependencies = {
+            -- { "Saghen/blink.compat", opts = { impersonate_nvim_cmp = true } },
+            "rafamadriz/friendly-snippets",
+        },
+        -- lazy = false,
+        -- version = "v0.*.*",
+        event = "VeryLazy",
+        build = "nix run .#build-plugin",
+        opts = require("plugins.cmp").blink,
+    },
     { -- Tabout
         "abecodes/tabout.nvim",
         dependencies = {
