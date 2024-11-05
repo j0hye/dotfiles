@@ -18,7 +18,4 @@ end
 
 vim.opt.rtp:prepend(lazy_path)
 
-vim.lsp.buf.hover = vim.lsp.buf.hover { border = "single" }
-vim.lsp.buf.signature_help = vim.lsp.buf.signature_help { border = "single" }
-
 require "plugins"
