@@ -6,20 +6,20 @@ local function mini_setup()
 end
 
 local plugins = {
-    { -- Colorscheme
-        "rose-pine/neovim",
-        name = "rose-pine",
-        lazy = false,
-        priority = 1000,
-        init = function()
-            require("rose-pine").setup {
-                styles = {
-                    transparency = false,
-                },
-            }
-            vim.cmd.colorscheme "rose-pine"
-        end,
-    },
+    -- { -- Colorscheme
+    --     "rose-pine/neovim",
+    --     name = "rose-pine",
+    --     lazy = false,
+    --     priority = 1000,
+    --     init = function()
+    --         require("rose-pine").setup {
+    --             styles = {
+    --                 transparency = false,
+    --             },
+    --         }
+    --         vim.cmd.colorscheme "rose-pine"
+    --     end,
+    -- },
     { -- Mini plugins
         "echasnovski/mini.nvim",
         event = "VimEnter",
