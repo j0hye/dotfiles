@@ -7,17 +7,17 @@ end
 
 local plugins = {
     { -- Colorscheme
-        name = "Colorscheme",
-        dir = vim.fn.stdpath "config",
-        dependencies = {
-            { "rose-pine/neovim", name = "rose-pine" },
-            -- "rebelot/kanagawa.nvim",
-            -- "luisiacc/gruvbox-baby",
-            -- "bluz71/vim-nightfly-colors",
-        },
+        "rose-pine/neovim",
+        name = "rose-pine",
         lazy = false,
         priority = 1000,
-        opts = require("colors").options,
+        config = function()
+            require("rose-pine").setup {
+                styles = {
+                    transparency = true,
+                },
+            }
+        end,
     },
     { -- Mini plugins
         "echasnovski/mini.nvim",
