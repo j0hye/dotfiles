@@ -20,11 +20,11 @@ end
 vim.opt.rtp:prepend(lazy_path)
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = "single",
+    border = "rounded",
 })
 
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = "single",
+    border = "rounded",
 })
 
 require "plugins"

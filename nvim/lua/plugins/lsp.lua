@@ -56,7 +56,7 @@ local servers = {
 }
 
 function M.config()
-    require("lspconfig.ui.windows").default_options.border = "single"
+    require("lspconfig.ui.windows").default_options.border = "rounded"
     local lspconfig = require "lspconfig"
 
     -- local capabilities = vim.lsp.protocol.make_client_capabilities()
