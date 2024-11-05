@@ -14,7 +14,7 @@ local plugins = {
         init = function()
             require("rose-pine").setup {
                 styles = {
-                    transparency = true,
+                    transparency = false,
                 },
             }
             vim.cmd.colorscheme "rose-pine"
