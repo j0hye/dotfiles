@@ -41,21 +41,22 @@ local servers = {
         cmd = { "nixd" },
         settings = {
             nixpkgs = {
-                expr = { 'import (builtins.getFlake "/home/johye/nix-config").inputs.nixpkgs { }' },
+                expr = { 'import (builtins.getFlake "/home/johye/.config/nix-config").inputs.nixpkgs { }' },
             },
             options = {
                 nixos = {
-                    expr = 'import (builtins.getFlake "/home/johye/nix-config").nixosConfigurations.WSL.options',
+                    expr = 'import (builtins.getFlake "/home/johye/.config/nix-config").nixosConfigurations.WSL.options',
                 },
-                -- home_manager = {
-                --     expr = 'import (builtins.getFlake "/home/johye/nix-config").homeConfigurations.johye.options',
-                -- },
+                home_manager = {
+                    expr = 'import (builtins.getFlake "/home/johye/.config/nix-config").homeConfigurations.johye.options',
+                },
             },
         },
     },
 }
 
 function M.config()
+    require("lspconfig.ui.windows").default_options.border = "single"
     local lspconfig = require "lspconfig"
 
     -- local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -104,6 +105,8 @@ end
 
 function M.mason_config()
     local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+    require("lspconfig.ui.windows").default_options.border = "single"
 
     require("mason").setup {
         ui = {

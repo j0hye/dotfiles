@@ -167,7 +167,7 @@ local plugins = {
         opts = require("plugins.lsp").conform,
     },
     { -- Options, mappings and autos
-        name = "options",
+        name = "Options",
         event = "VeryLazy",
         dir = vim.fn.stdpath "config",
         config = function()
