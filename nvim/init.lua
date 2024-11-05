@@ -18,12 +18,12 @@ end
 
 vim.opt.rtp:prepend(lazy_path)
 
-vim.lsp.buf.handlers["textDocument/hover"] = vim.lsp.buf.with(vim.lsp.buf.handlers.hover, {
-    border = "rounded",
-})
-
-vim.lsp.buf.handlers["textDocument/signatureHelp"] = vim.lsp.buf.with(vim.lsp.buf.handlers.signature_help, {
-    border = "rounded",
-})
+-- vim.lsp.buf.handlers["textDocument/hover"] = vim.lsp.buf.with(vim.lsp.buf.handlers.hover, {
+--     border = "rounded",
+-- })
+--
+-- vim.lsp.buf.handlers["textDocument/signatureHelp"] = vim.lsp.buf.with(vim.lsp.buf.handlers.signature_help, {
+--     border = "rounded",
+-- })
 
 require "plugins"
