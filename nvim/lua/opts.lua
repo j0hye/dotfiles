@@ -6,6 +6,7 @@ function opts.start()
     g.mapleader = " "
     g.maplocalleader = ","
     g.editorconfig = true
+    vim.o.background = "dark"
     opt.laststatus = 3
     opt.clipboard = "unnamed,unnamedplus"
     opt.termguicolors = true

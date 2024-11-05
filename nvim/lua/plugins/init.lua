@@ -11,12 +11,13 @@ local plugins = {
         name = "rose-pine",
         lazy = false,
         priority = 1000,
-        config = function()
+        init = function()
             require("rose-pine").setup {
                 styles = {
                     transparency = true,
                 },
             }
+            vim.cmd.colorscheme "rose-pine"
         end,
     },
     { -- Mini plugins
