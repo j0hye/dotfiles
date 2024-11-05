@@ -56,7 +56,6 @@ local servers = {
 }
 
 function M.config()
-    require("lspconfig.ui.windows").default_options.border = "rounded"
     local lspconfig = require "lspconfig"
 
     -- local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -105,8 +104,6 @@ end
 
 function M.mason_config()
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-    require("lspconfig.ui.windows").default_options.border = "single"
 
     require("mason").setup {
         ui = {
