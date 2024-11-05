@@ -1,3 +1,4 @@
+---@diagnostic disable: deprecated
 vim.loader.enable()
 
 require("opts").start()
@@ -17,5 +18,13 @@ if not vim.uv.fs_stat(lazy_path) then
 end
 
 vim.opt.rtp:prepend(lazy_path)
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+    border = "single",
+})
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, {
+    border = "single",
+})
 
 require "plugins"
