@@ -107,7 +107,7 @@ local plugins = {
             "lewis6991/gitsigns.nvim",
             "nvim-tree/nvim-web-devicons",
         },
-        event = { "VeryLazy" },
+        -- event = { "VeryLazy" },
         keys = require("keymap").barbar,
         init = function()
             vim.g.barbar_auto_setup = false

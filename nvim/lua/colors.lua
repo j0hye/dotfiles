@@ -27,9 +27,15 @@ function M.options()
                 transparency = true,
             },
             highlight_groups = {
-                BufferCurrent = { bg = "Normal" },
-                BufferCurrentSign = { bg = "", fg = "" },
-                BufferCurrentSignRight = { bg = "", fg = "" },
+                -- BufferCurrent = { bg = "Normal" },
+                -- BufferCurrentSign = { bg = "Normal", fg = "Normal" },
+                -- BufferCurrentSignRight = { bg = "Normal", fg = "Normal" },
+                BufferDefaultCurrentSign = { bg = "Normal" },
+                BufferDefaultVisibleSign = { bg = "Normal" },
+                BufferDefaultInactiveSign = { bg = "Normal" },
+                BufferDefaultCurrentSignRight = { bg = "Normal" },
+                BufferDefaultVisibleSignRight = { bg = "Normal" },
+                BufferDefaultInactiveSignRight = { bg = "Normal" },
             },
         },
         kanagawa = {
