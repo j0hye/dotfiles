@@ -28,7 +28,7 @@ function M.options()
             },
             highlight_groups = {
                 BufferCurrent = { bg = "Normal" },
-                BufferCurrentSign = { bg = "Normal" },
+                BufferCurrentSign = { bg = "Normal", fg = "Normal" },
             },
         },
         kanagawa = {
