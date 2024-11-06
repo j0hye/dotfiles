@@ -116,8 +116,8 @@ local plugins = {
         opts = {
             icons = {
                 separator = {
-                    left = "",
-                    right = "",
+                    left = "/",
+                    right = "/",
                 },
                 separator_at_end = false,
             },
