@@ -108,6 +108,7 @@ local plugins = {
             "nvim-tree/nvim-web-devicons",
         },
         -- event = { "VeryLazy" },
+        lazy = false,
         keys = require("keymap").barbar,
         init = function()
             vim.g.barbar_auto_setup = false
