@@ -109,17 +109,18 @@ local plugins = {
         },
         event = { "VeryLazy" },
         keys = require("keymap").barbar,
-        opts = {
-            icons = {
-                separator = {
-                    left = "",
-                    right = "",
+        opts = function()
+            vim.g.barbar_auto_setup = false
+            return {
+                icons = {
+                    separator = {
+                        left = "",
+                        right = "",
+                    },
+                    separator_at_end = false,
                 },
-                separator_at_end = false,
-            },
-            maximum_padding = 1,
-            minimum_padding = 1,
-        },
+            }
+        end,
     },
     { -- Statusline
         "nvim-lualine/lualine.nvim",
