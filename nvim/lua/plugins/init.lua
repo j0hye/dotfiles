@@ -117,8 +117,8 @@ local plugins = {
                 },
                 separator_at_end = false,
             },
-            maximum_padding = 0,
-            minimum_padding = 0,
+            maximum_padding = 1,
+            minimum_padding = 1,
         },
     },
     { -- Statusline
