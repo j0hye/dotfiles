@@ -16,6 +16,20 @@ if not vim.uv.fs_stat(lazy_path) then
     }
 end
 
+vim.lsp.handlers["textDocument/signatureHelp"] = function(_, result, ctx, config)
+    config = config or {}
+    config.border = "rounded"
+
+    return vim.lsp.buf.handlers.signature_help(_, result, ctx, config)
+end
+
+vim.lsp.handlers["textDocument/hover"] = function(_, result, ctx, config)
+    config = config or {}
+    config.border = "rounded"
+
+    return vim.lsp.buf.handlers.hover(_, result, ctx, config)
+end
+
 vim.opt.rtp:prepend(lazy_path)
 
 require "plugins"
