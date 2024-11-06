@@ -109,7 +109,7 @@ local plugins = {
         },
         event = { "VeryLazy" },
         keys = require("keymap").barbar,
-        opts = {},
+        opts = { icons = { separator = { left = "", right = "" } } },
     },
     { -- Statusline
         "nvim-lualine/lualine.nvim",
