@@ -11,14 +11,7 @@ local plugins = {
         name = "rose-pine",
         lazy = false,
         priority = 1000,
-        init = function()
-            require("rose-pine").setup {
-                styles = {
-                    transparency = true,
-                },
-            }
-            vim.cmd.colorscheme "rose-pine"
-        end,
+        config = require("colors").options,
     },
     { -- Mini plugins
         "echasnovski/mini.nvim",
@@ -173,7 +166,7 @@ local plugins = {
         dir = vim.fn.stdpath "config",
         config = function()
             require("opts").after()
-            require("utils").autocmds()
+            require("autos").autocmds()
             require("keymap").general()
         end,
     },

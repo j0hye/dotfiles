@@ -198,7 +198,7 @@ function M.on_attach(client, bufnr)
 
     -- LSP inspect client
     vim.keymap.set("n", "<leader>ui", function()
-        require("utils").inspect_lsp_client()
+        require("autos").inspect_lsp_client()
     end, { desc = "Inspect LSP configuration" })
 
     -- On attach keymap
