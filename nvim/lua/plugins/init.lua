@@ -112,11 +112,13 @@ local plugins = {
         opts = {
             icons = {
                 separator = {
-                    left = " ",
-                    right = " ",
+                    left = "",
+                    right = "",
                 },
                 separator_at_end = false,
             },
+            maximum_padding = 0,
+            minimum_padding = 0,
         },
     },
     { -- Statusline
