@@ -31,7 +31,7 @@ function M.options()
                 -- BufferCurrentSign = { bg = "Normal", fg = "Normal" },
                 -- BufferCurrentSignRight = { bg = "Normal", fg = "Normal" },
                 BufferDefaultCurrentSign = { fg = "NONE", bg = "NONE" },
-                BufferDefaultVisibleSign = { fg = "NONE", bg = "NONE" },
+                BufferDefaultVisibleSign = { guifg = "NONE", bg = "NONE" },
                 BufferDefaultInactiveSign = { fg = "NONE", bg = "NONE" },
                 BufferDefaultCurrentSignRight = { fg = "NONE", bg = "NONE" },
                 BufferDefaultVisibleSignRight = { fg = "NONE", bg = "NONE" },
