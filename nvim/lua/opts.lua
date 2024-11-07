@@ -85,6 +85,15 @@ vim.api.nvim_create_autocmd("User", {
     end,
 })
 
+-- Override LSP floating window config to add rounded border
+-- local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+    opts = opts or {}
+    opts.border = opts.border or "double"
+    -- return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+
+-- Diagnostics config
 vim.diagnostic.config {
     virtual_text = {
         prefix = "",
