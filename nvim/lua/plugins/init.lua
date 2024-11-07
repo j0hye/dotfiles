@@ -110,7 +110,8 @@ local plugins = {
                 style_preset = 2,
                 themable = true,
                 indicator = {
-                    style = "underline",
+                    style = "none",
+                    icon = "",
                 },
             },
         },
