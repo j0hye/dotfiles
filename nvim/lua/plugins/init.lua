@@ -107,8 +107,8 @@ local plugins = {
         event = "VeryLazy",
         opts = {
             options = {
-                -- style_preset = bufferline.style_preset.default,
-                -- themable = true,
+                style_preset = 2,
+                themable = true,
                 indicator = {
                     style = "underline",
                 },
