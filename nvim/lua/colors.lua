@@ -26,10 +26,6 @@ function M.options()
             styles = {
                 transparency = true,
             },
-            highlight_groups = {
-                -- BufferCurrent = { bg = "Normal" },
-                -- BufferCurrentSign = { bg = "Normal", fg = "Normal" },
-            },
         },
         kanagawa = {
             transparent = true,

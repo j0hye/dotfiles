@@ -7,7 +7,6 @@ function M.bufferline()
             themable = true,
             indicator = {
                 style = "none",
-                -- icon = " ",
             },
             separator_style = { "", "" },
         },
@@ -20,11 +19,6 @@ function M.noice()
             enabled = true,
             view = "cmdline",
             format = {
-                IncRename = {
-                    pattern = "^:%s*IncRename%s+",
-                    icon = " ",
-                    conceal = true,
-                },
                 input = { view = "cmdline" },
             },
             opts = {

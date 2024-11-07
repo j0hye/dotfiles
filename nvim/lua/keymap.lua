@@ -80,20 +80,6 @@ function M.toggleterm()
     vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], { desc = "Terminal window commands" })
 end
 
-function M.barbar()
-    -- Goto buffer
-    vim.keymap.set("n", "<Tab>", ":BufferNext<CR>", { desc = "Goto next buffer" })
-    vim.keymap.set("n", "<S-Tab>", ":BufferPrevious<CR>", { desc = "Goto previous buffer" })
-    vim.keymap.set("n", "<localleader>b", ":BufferNext<CR>", { desc = "Goto next buffer" })
-    vim.keymap.set("n", "<localleader>B", ":BufferPrevious<CR>", { desc = "Goto previous buffer" })
-    -- Sort buffers
-    vim.keymap.set("n", "<leader>bsb", "<Cmd>BufferOrderByBufferNumber<CR>", { desc = "Sort by buffer number" })
-    vim.keymap.set("n", "<leader>bsn", "<Cmd>BufferOrderByName<CR>", { desc = "Sort by name" })
-    vim.keymap.set("n", "<leader>bsd", "<Cmd>BufferOrderByDirectory<CR>", { desc = "Sort by directory" })
-    vim.keymap.set("n", "<leader>bsl", "<Cmd>BufferOrderByLanguage<CR>", { desc = "Sort by language" })
-    vim.keymap.set("n", "<leader>bsw", "<Cmd>BufferOrderByWindowNumber<CR>", { desc = "Sort by window number" })
-end
-
 function M.git()
     vim.keymap.set("n", "<leader>gn", ":Neogit<CR>", { desc = "Open Neogit" })
 
@@ -169,7 +155,7 @@ function M.trouble()
     vim.keymap.set("n", "<leader>dt", ":Trouble<CR>", { desc = "Trouble telescopes" })
     vim.keymap.set("n", "<leader>dd", ":Trouble diagnostics toggle<CR>", { desc = "Workspace diagnostics" })
     vim.keymap.set("n", "<leader>db", ":Trouble diagnostics toggle filter.buf=0<CR>", { desc = "Buffer diagnostics" })
-    vim.keymap.set("n", "<leader>ds", ":Trouble symbols toggle focue=false<CR>", { desc = "Document symbols" })
+    vim.keymap.set("n", "<leader>ds", ":Trouble symbols toggle focus=false<CR>", { desc = "Document symbols" })
     vim.keymap.set(
         "n",
         "<leader>dr",
@@ -199,7 +185,7 @@ function M.on_attach(client, bufnr)
     -- LSP inspect client
     vim.keymap.set("n", "<leader>ui", function()
         require("autos").inspect_lsp_client()
-    end, { desc = "Inspect LSP configuration" })
+    end, { desc = "Inspect LSP configuration", buffer = bufnr })
 
     -- On attach keymap
     vim.keymap.set("n", "gd", ":Trouble lsp_definitions<CR>", { desc = "Goto definition", buffer = bufnr })
@@ -207,7 +193,7 @@ function M.on_attach(client, bufnr)
     vim.keymap.set("n", "gr", ":Trouble lsp_references<CR>", { desc = "Goto references", buffer = bufnr })
     vim.keymap.set("n", "gi", ":Trouble lsp_implementations<CR>", { desc = "Goto implementation", buffer = bufnr })
     vim.keymap.set("n", "gt", ":Trouble lsp_type_definitions<CR>", { desc = "Type definition", buffer = bufnr })
-    vim.keymap.set("n", "<leader>cr", ":IncRename ", { desc = "Rename", buffer = bufnr })
+    vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename", buffer = bufnr })
     vim.keymap.set({ "n", "x" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action", buffer = bufnr })
     vim.keymap.set("n", "<leader>cl", vim.lsp.codelens.run, { desc = "Run Codelens", buffer = bufnr })
 
@@ -219,11 +205,6 @@ function M.on_attach(client, bufnr)
     vim.keymap.set("n", "<leader>f", function()
         require("conform").format()
     end, { desc = "Format buffer", buffer = bufnr })
-
-    -- LSP Range format
-    vim.keymap.set("v", "<leader>f", function()
-        vim.lsp.buf.range_formatting { async = true }
-    end, { desc = "Format range", buffer = bufnr })
 
     -- Show line diagnostics
     vim.keymap.set("n", "<leader>cd", function()
@@ -241,36 +222,6 @@ function M.on_attach(client, bufnr)
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = bufnr })
         end, { desc = "Toggle inlay hints", buffer = bufnr })
     end
-end
-
-function M.care()
-    vim.keymap.set("i", "<C-y>", "<Plug>(CareConfirm)")
-    vim.keymap.set("i", "<C-e>", "<Plug>(CareClose)")
-    vim.keymap.set("i", "<C-n>", "<Plug>(CareSelectNext)")
-    vim.keymap.set("i", "<C-p>", "<Plug>(CareSelectPrev)")
-
-    vim.keymap.set("i", "<C-f>", function()
-        if require("care").api.doc_is_open() then
-            require("care").api.scroll_docs(4)
-        else
-            vim.api.nvim_feedkeys(vim.keycode "<C-f>", "n", false)
-        end
-    end)
-
-    vim.keymap.set("i", "<C-b>", function()
-        if require("care").api.doc_is_open() then
-            require("care").api.scroll_docs(-4)
-        else
-            vim.api.nvim_feedkeys(vim.keycode "<C-b>", "n", false)
-        end
-    end)
-
-    vim.keymap.set({ "i", "s" }, "<C-l>", function()
-        require("luasnip").jump(1)
-    end, { silent = true })
-    vim.keymap.set({ "i", "s" }, "<C-h>", function()
-        require("luasnip").jump(-1)
-    end, { silent = true })
 end
 
 function M.telescope()
@@ -299,8 +250,6 @@ function M.telescope()
         require("telescope.builtin").command_history(require("telescope.themes").get_dropdown { previewer = false })
     end, { desc = "Command history" })
 
-    -- It's also possible to pass additional configuration options.
-    --  See `:help telescope.builtin.live_grep()` for information about particular keys
     vim.keymap.set("n", "<leader>s/", function()
         require("telescope.builtin").live_grep {
             grep_open_files = true,
@@ -308,9 +257,8 @@ function M.telescope()
         }
     end, { desc = "Search in open files" })
 
-    -- Shortcut for searching your Neovim configuration files
     vim.keymap.set("n", "<leader>sn", function()
-        require("telescope.builtin").find_files { cwd = vim.fn.stdpath "config" }
+        require("telescope.builtin").find_files { cwd = vim.fn.expand "~/dotfiles/nvim" }
     end, { desc = "Search neovim files" })
 
     -- Extra pickers

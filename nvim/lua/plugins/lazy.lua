@@ -37,7 +37,6 @@ function M.options()
         },
         ui = {
             border = "single",
-            -- border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" },
             title = "lazy.nvim",
         },
     }

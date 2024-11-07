@@ -103,45 +103,4 @@ function M.tabout()
     }
 end
 
-function M.care()
-    return {
-        ui = {
-            menu = {
-                border = "single",
-                format_entry = require("care.presets").Default, --Atom/Default
-            },
-            docs_view = {
-                border = "single",
-            },
-            ghost_text = {
-                enabled = false,
-                position = "inline", -- inline/overlay
-            },
-        },
-        snippet_expansion = function(body)
-            require("luasnip").lsp_expand(body)
-        end,
-    }
-end
-
-function M.careeee()
-    return {
-        "max397574/care.nvim",
-        dependencies = {
-            "max397574/care-cmp",
-            {
-                "L3MON4D3/LuaSnip",
-                version = "v2.*",
-                build = "make install_jsregexp",
-                config = function()
-                    return {}
-                end,
-            },
-        },
-        event = { "VimEnter", "VeryLazy", "BufReadPost", "BufNewFile" },
-        keys = require("keymap").care,
-        opts = require("plugins.cmp").care,
-    }
-end
-
 return M

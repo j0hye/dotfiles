@@ -84,11 +84,8 @@ local plugins = {
     { -- Completion
         "Saghen/blink.cmp",
         dependencies = {
-            -- { "Saghen/blink.compat", opts = { impersonate_nvim_cmp = true } },
             "rafamadriz/friendly-snippets",
         },
-        -- lazy = false,
-        -- version = "v0.*.*",
         event = "VeryLazy",
         build = "nix run .#build-plugin",
         opts = require("plugins.cmp").blink,
@@ -107,28 +104,6 @@ local plugins = {
         event = "VeryLazy",
         opts = require("plugins.ui").bufferline(),
     },
-    -- { -- Buffers
-    --     "romgrk/barbar.nvim",
-    --     dependencies = {
-    --         "lewis6991/gitsigns.nvim",
-    --         "nvim-tree/nvim-web-devicons",
-    --     },
-    --     -- event = { "VeryLazy" },
-    --     lazy = false,
-    --     keys = require("keymap").barbar,
-    --     init = function()
-    --         vim.g.barbar_auto_setup = false
-    --     end,
-    --     opts = {
-    --         icons = {
-    --             separator = {
-    --                 left = "",
-    --                 right = "",
-    --             },
-    --             separator_at_end = false,
-    --         },
-    --     },
-    -- },
     { -- Statusline
         "nvim-lualine/lualine.nvim",
         event = { "BufReadPost", "BufNewFile" },
