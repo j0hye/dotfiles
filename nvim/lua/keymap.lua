@@ -211,13 +211,9 @@ function M.on_attach(client, bufnr)
     vim.keymap.set({ "n", "x" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action", buffer = bufnr })
     vim.keymap.set("n", "<leader>cl", vim.lsp.codelens.run, { desc = "Run Codelens", buffer = bufnr })
 
-    vim.keymap.set({ "n", "i" }, "<C-s>", function()
-        vim.lsp.buf.signature_help { border = "single" }
+    vim.keymap.set({ "n", "i", "s" }, "<C-s>", function()
+        vim.lsp.buf.signature_help()
     end, { desc = "Signature help", buffer = bufnr })
-
-    vim.keymap.set("n", "K", function()
-        vim.lsp.buf.hover { border = "single" }
-    end, { desc = "Hover documentation", buffer = bufnr })
 
     -- Format with Conform and LSP fallback
     vim.keymap.set("n", "<leader>f", function()
