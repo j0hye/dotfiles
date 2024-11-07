@@ -109,24 +109,11 @@ local plugins = {
             options = {
                 style_preset = 2,
                 themable = true,
-                -- indicator = {
-                --     style = "none",
-                --     icon = " ",
-                -- },
-            },
-            highlights = {
-                separator_selected = {
-                    fg = "NONE",
-                    bg = "NONE",
+                indicator = {
+                    style = "none",
+                    -- icon = " ",
                 },
-                separator_visible = {
-                    fg = "NONE",
-                    bg = "NONE",
-                },
-                separator = {
-                    fg = "NONE",
-                    bg = "NONE",
-                },
+                separator_style = { "", "" },
             },
         },
     },
