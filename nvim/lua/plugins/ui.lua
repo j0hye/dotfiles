@@ -1,5 +1,19 @@
 local M = {}
 
+function M.bufferline()
+    return {
+        options = {
+            style_preset = 2,
+            themable = true,
+            indicator = {
+                style = "none",
+                -- icon = " ",
+            },
+            separator_style = { "", "" },
+        },
+    }
+end
+
 function M.noice()
     return {
         cmdline = {

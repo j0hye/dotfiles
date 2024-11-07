@@ -105,17 +105,7 @@ local plugins = {
         "akinsho/bufferline.nvim",
         dependencies = "nvim-tree/nvim-web-devicons",
         event = "VeryLazy",
-        opts = {
-            options = {
-                style_preset = 2,
-                themable = true,
-                indicator = {
-                    style = "none",
-                    -- icon = " ",
-                },
-                separator_style = { "", "" },
-            },
-        },
+        opts = require("plugins.ui").bufferline(),
     },
     -- { -- Buffers
     --     "romgrk/barbar.nvim",
