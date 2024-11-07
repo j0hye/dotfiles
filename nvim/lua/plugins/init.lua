@@ -116,16 +116,16 @@ local plugins = {
             },
             highlights = {
                 separator_selected = {
-                    fg = "Normal",
-                    bg = "Normal",
+                    fg = "NONE",
+                    bg = "NONE",
                 },
                 separator_visible = {
-                    fg = "Normal",
-                    bg = "Normal",
+                    fg = "NONE",
+                    bg = "NONE",
                 },
                 separator = {
-                    fg = "Normal",
-                    bg = "Normal",
+                    fg = "NONE",
+                    bg = "NONE",
                 },
             },
         },
