@@ -66,7 +66,7 @@ function opts.after()
     opt.foldlevelstart = 99
     opt.foldenable = true
 
-    -- Increamental searching
+    -- Incremental searching
     opt.incsearch = true
     opt.hlsearch = true
 
