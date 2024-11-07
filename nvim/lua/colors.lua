@@ -29,14 +29,6 @@ function M.options()
             highlight_groups = {
                 -- BufferCurrent = { bg = "Normal" },
                 -- BufferCurrentSign = { bg = "Normal", fg = "Normal" },
-                -- BufferCurrentSignRight = { bg = "Normal", fg = "Normal" },
-                BufferDefaultCurrentSign = { fg = "NONE", bg = "NONE" },
-                BufferDefaultVisibleSign = { fg = "NONE", bg = "NONE" },
-                BufferDefaultInactiveSign = { fg = "NONE", bg = "NONE" },
-                BufferDefaultCurrentSignRight = { fg = "NONE", bg = "NONE" },
-                BufferDefaultVisibleSignRight = { fg = "NONE", bg = "NONE" },
-                BufferDefaultInactiveSignRight = { fg = "NONE", bg = "NONE" },
-                BufferDefaultAlternateSignRight = { fg = "NONE", bg = "NONE" },
             },
         },
         kanagawa = {
