@@ -107,11 +107,25 @@ local plugins = {
         event = "VeryLazy",
         opts = {
             options = {
-                style_preset = 2,
+                style_preset = require("bufferline").style_preset.minimal,
                 themable = true,
-                indicator = {
-                    style = "none",
-                    icon = "",
+                -- indicator = {
+                --     style = "none",
+                --     icon = " ",
+                -- },
+            },
+            highlights = {
+                separator_selected = {
+                    fg = "Normal",
+                    bg = "Normal",
+                },
+                separator_visible = {
+                    fg = "Normal",
+                    bg = "Normal",
+                },
+                separator = {
+                    fg = "Normal",
+                    bg = "Normal",
                 },
             },
         },
